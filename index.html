@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>سوق الكيلوات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>أضف منتج جديد</h2>
+
+  <input type="text" id="name" placeholder="اسم المنتج (مثلاً تفاح)">
+  <input type="number" id="price" placeholder="سعر الكيلو">
+  <input type="number" id="quantity" placeholder="عدد الكيلوات">
+  <button onclick="addProduct()">أضف</button>
+
+  <div id="total-sum"></div>
+  <button id="clear-btn" onclick="clearAll()">🗑️ حذف الكل</button>
+
+  <h3>المنتجات المخزنة:</h3>
+  <div id="product-list"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
