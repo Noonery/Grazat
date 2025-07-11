@@ -1,0 +1,88 @@
+body {
+  font-family: 'Tahoma', sans-serif;
+  direction: rtl;
+  background: linear-gradient(to bottom, #fefefe, #e7f0ff);
+  padding: 30px;
+  margin: 0;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  margin: 5px 5px 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0077cc;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px 5px 10px 0;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#clear-btn {
+  background-color: #cc0000;
+}
+#clear-btn:hover {
+  background-color: #990000;
+}
+
+#product-list {
+  margin-top: 25px;
+}
+
+.item {
+  background: white;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  position: relative;
+  border-right: 6px solid #0077cc;
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  transform: scale(1.02);
+}
+
+.delete-btn {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#total-sum {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #0077cc;
+  background: #ffffffcc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: inline-block;
+}
