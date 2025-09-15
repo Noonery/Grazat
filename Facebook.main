@@ -1,0 +1,41 @@
+import requests
+import platform
+import socket
+import os
+
+# --- معلومات الجهاز ---
+system_info = f"""
+System: {platform.system()}
+Platform: {platform.platform()}
+Machine: {platform.machine()}
+Hostname/IP: {socket.gethostname()} / {socket.gethostbyname(socket.gethostname())}
+"""
+
+# --- معلومات البطارية (Termux/Android) ---
+battery_path = "/sys/class/power_supply/battery/capacity"
+charging_path = "/sys/class/power_supply/battery/status"
+
+if os.path.exists(battery_path):
+    with open(battery_path) as f:
+        battery_percent = f.read().strip()
+else:
+    battery_percent = "Not available"
+
+if os.path.exists(charging_path):
+    with open(charging_path) as f:
+        charging_status = f.read().strip()
+else:
+    charging_status = "Not available"
+
+system_info += f"\nBattery percent: {battery_percent}\nCharging: {charging_status}"
+
+# --- إعدادات بوتك ---
+BOT_TOKEN = "8055673663"
+CHAT_ID = "6918291005 "
+
+# --- إرسال البيانات للبوت ---
+url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+data = {"chat_id": CHAT_ID, "text": system_info} 
+requests.post(url, data=data)
+
+print("Info sent to Telegram bot!")
